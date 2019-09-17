@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/mmm.dtd
+
+-->
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE pharmacy SYSTEM "mmm.dtd">
+
+    <pharmacy>
+    ...
+    </pharmacy>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT pharmacy (daily_report_details|bill_details|customer|invoice_details|item_primary_details|medical_supplier_details|medicine_details|supplier_details|user_primary_details)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT daily_report_details (report_id|total_income|total_outcome)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT report_id (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT total_income (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT total_outcome (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT bill_details (bill_id|tot_amount|tot_qty|tot_discount|bill_date)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT bill_id (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT tot_amount (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT tot_qty (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT tot_discount (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT bill_date (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT customer (cust_nic|cust_fname|cust_lname|cust_address|cust_dob)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT cust_nic (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT cust_fname (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT cust_lname (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT cust_address (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT cust_dob (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT invoice_details (invoice_id|total_qty|total_invoice)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT invoice_id (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT total_qty (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT total_invoice (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT item_primary_details (item_name|exp_date|price|discount|available_qty)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT item_name (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT exp_date (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT price (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT discount (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT available_qty (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT medical_supplier_details (license_number|sup_fname|sup_lname|sup_address)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT license_number (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT sup_fname (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT sup_lname (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT sup_address (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT medicine_details (item_name_fk|exp_date|available_qty|price|discount)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT item_name_fk (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT supplier_details (sup_id|sup_fname|sup_lname|sup_address)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT sup_id (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT user_primary_details (nic|user_fname|user_lname|user_address)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT nic (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT user_fname (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT user_lname (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT user_address (#PCDATA)>

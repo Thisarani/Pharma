@@ -1,0 +1,190 @@
+<?xml version = "1.0"?>
+<?xml-stylesheet type = "text/xsl" href = "daily_report_details.xsl"?>
+<pharmacy>
+        <daily_report_details>
+		<report_id>1</report_id>
+		<total_income>15000</total_income>
+		<total_outcome>20000</total_outcome>
+	</daily_report_details>
+        <daily_report_details>
+		<report_id>2</report_id>
+		<total_income>17500</total_income>
+		<total_outcome>0</total_outcome>
+	</daily_report_details>
+        <daily_report_details>
+		<report_id>3</report_id>
+		<total_income>10000.5</total_income>
+		<total_outcome>10000</total_outcome>
+	</daily_report_details>
+        <bill_details>
+		<bill_id>1</bill_id>
+		<tot_amount>100000</tot_amount>
+		<tot_qty>17</tot_qty>
+		<tot_discount>500</tot_discount>
+		<bill_date>2019-07-13</bill_date>
+	</bill_details>
+	<bill_details>
+		<bill_id>2</bill_id>
+		<tot_amount>7500</tot_amount>
+		<tot_qty>75</tot_qty>
+		<tot_discount>1000</tot_discount>
+		<bill_date>2019-07-16</bill_date>
+	</bill_details>
+	<customer>
+		<cust_nic>625874588V</cust_nic>
+		<cust_fname>Charles</cust_fname>
+		<cust_lname>Kulasinghe</cust_lname>
+		<cust_address>No:3, Dewata Road, Katuwana</cust_address>
+		<cust_dob>1982-01-15</cust_dob>
+	</customer>
+	<customer>
+		<cust_nic>678958988V</cust_nic>
+		<cust_fname>Malani</cust_fname>
+		<cust_lname>Bulathsinghala</cust_lname>
+		<cust_address>67/A, Thalagala Road, Homagama</cust_address>
+		<cust_dob>1967-12-01</cust_dob>
+	</customer>
+        <customer>
+		<cust_nic>758956857V</cust_nic>
+		<cust_fname>Sriyalatha</cust_fname>
+		<cust_lname>Malawige</cust_lname>
+		<cust_address>23, Thibbotuwawa, Homagama</cust_address>
+		<cust_dob>1975-02-10</cust_dob>
+	</customer>
+        <customer>
+		<cust_nic>852565896V</cust_nic>
+		<cust_fname>Saman</cust_fname>
+		<cust_lname>Perera</cust_lname>
+		<cust_address>23, Gangodawila, Homagama</cust_address>
+		<cust_dob>1985-07-25</cust_dob>
+	</customer>
+        <customer>
+		<cust_nic>985899857V</cust_nic>
+		<cust_fname>Kumudu</cust_fname>
+		<cust_lname>Dissanayake</cust_lname>
+		<cust_address>No:52, Gammanpila Road, Pannipitiya</cust_address>
+		<cust_dob>1998-03-11</cust_dob>
+	</customer>
+	
+        <invoice_details>
+		<invoice_id>1</invoice_id>
+		<total_qty>100</total_qty>
+		<total_invoice>10</total_invoice>
+	</invoice_details>
+	<invoice_details>
+		<invoice_id>2</invoice_id>
+		<total_qty>75</total_qty>
+		<total_invoice>20</total_invoice>
+	</invoice_details>
+        <item_primary_details>
+		<item_name>Dog-Biscuit</item_name>
+		<exp_date>2021-03-11</exp_date>
+		<price>25</price>
+		<discount>2.5</discount>
+		<available_qty>1000</available_qty>
+	</item_primary_details>
+	<item_primary_details>
+		<item_name>Encorate Chrono 500m</item_name>
+		<exp_date>2019-11-08</exp_date>
+		<price>41</price>
+		<discount>0</discount>
+		<available_qty>200</available_qty>
+	</item_primary_details>
+        <item_primary_details>
+		<item_name>Paracetamol-capsule</item_name>
+		<exp_date>2019-07-31</exp_date>
+		<price>5</price>
+		<discount>0</discount>
+		<available_qty>1000</available_qty>
+	</item_primary_details>
+        <item_primary_details>
+		<item_name>Toxoide</item_name>
+		<exp_date>2019-12-31</exp_date>
+		<price>20</price>
+		<discount>0</discount>
+		<available_qty>1000</available_qty>
+	</item_primary_details>
+        <item_primary_details>
+		<item_name>Transparent-Plaster</item_name>
+		<exp_date>2019-10-17</exp_date>
+		<price>250.5</price>
+		<discount>15</discount>
+		<available_qty>100</available_qty>
+	</item_primary_details>
+         <item_primary_details>
+		<item_name>Xenat</item_name>
+		<exp_date>2020-04-10</exp_date>
+		<price>52</price>
+		<discount>0</discount>
+		<available_qty>2000</available_qty>
+	</item_primary_details>
+        <medical_supplier_details>
+		<license_number>11127</license_number>
+		<sup_fname>Supun</sup_fname>
+		<sup_lname>Gamage</sup_lname>
+		<sup_address>Pitipana, Homagama.</sup_address>
+	</medical_supplier_details>
+	<medical_supplier_details>
+		<license_number>12485</license_number>
+		<sup_fname>Kamal</sup_fname>
+		<sup_lname>Gunawardhana</sup_lname>
+		<sup_address>High level Road,Nugegoda.</sup_address>
+	</medical_supplier_details>
+        <medicine_details>
+		<item_name_fk>Penadol</item_name_fk>
+		<exp_date>2019-07-15</exp_date>
+		<available_qty>4</available_qty>
+		<price>2rs</price>
+		<discount>10</discount>
+	</medicine_details>
+	<medicine_details>
+		<item_name_fk>Paracetamol</item_name_fk>
+		<exp_date>2019-07-10</exp_date>
+		<available_qty>3</available_qty>
+		<price>10rs</price>
+		<discount>4</discount>
+	</medicine_details>
+	<supplier_details>
+		<sup_id>1</sup_id>
+		<sup_fname>Thisarani</sup_fname>
+		<sup_lname>Hewage</sup_lname>
+		<sup_address>Galle</sup_address>
+	</supplier_details>
+	<supplier_details>
+		<sup_id>11</sup_id>
+		<sup_fname>Supuni</sup_fname>
+		<sup_lname>Arachchi</sup_lname>
+		<sup_address>Kadawatha</sup_address>
+	</supplier_details>
+	<user_primary_details>
+		<nic>947810642V</nic>
+		<user_fname>Thisarani</user_fname>
+		<user_lname>Malawaraarachchi</user_lname>
+		<user_address>194/31 Pathum Uyana, Pamburana, Matara</user_address>
+	</user_primary_details>
+	<user_primary_details>
+		<nic>952211044V</nic>
+		<user_fname>Melani</user_fname>
+		<user_lname>Kaluarachchi</user_lname>
+		<user_address>12, Suananda Road, Welegoda, Ambalangoda</user_address>
+	</user_primary_details>
+        <user_primary_details>
+		<nic>952212204V</nic>
+		<user_fname>Rajitha </user_fname>
+		<user_lname>Gamage</user_lname>
+		<user_address>23 B, Sudam Ranasinghe Road, Horana</user_address>
+	</user_primary_details>
+        <user_primary_details>
+		<nic>977710642V</nic>
+		<user_fname>Nadeesha</user_fname>
+		<user_lname>Pathirana</user_lname>
+		<user_address>13/A, Daraniyagala, Rathnapura</user_address>
+	</user_primary_details>
+        <user_primary_details>
+		<nic>977810642V</nic>
+		<user_fname>Kusal</user_fname>
+		<user_lname>Amarasinghe</user_lname>
+		<user_address>52A, Balangoda, Rathnapura</user_address>
+	</user_primary_details>
+</pharmacy>
+
