@@ -43,7 +43,6 @@ public class ViewPreviousBills extends javax.swing.JFrame {
         previousbillsQuery2 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT p FROM Previousbills p");
         previousbillsList2 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : previousbillsQuery2.getResultList();
         jLabel1 = new javax.swing.JLabel();
-        reportdate = new datechooser.beans.DateChooserCombo();
         jButton2 = new javax.swing.JButton();
         jscrollpane = new javax.swing.JScrollPane();
         bill_table = new javax.swing.JTable();
@@ -69,7 +68,6 @@ public class ViewPreviousBills extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 102, 255));
         jLabel1.setText("Daily Report");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 50, 220, 50));
-        getContentPane().add(reportdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -285,7 +283,6 @@ public class ViewPreviousBills extends javax.swing.JFrame {
     private javax.persistence.Query previousbillsQuery;
     private javax.persistence.Query previousbillsQuery1;
     private javax.persistence.Query previousbillsQuery2;
-    private datechooser.beans.DateChooserCombo reportdate;
     private javax.swing.JButton search;
     // End of variables declaration//GEN-END:variables
 }
