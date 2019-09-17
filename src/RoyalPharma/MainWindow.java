@@ -5,7 +5,7 @@
  */
 package RoyalPharma;
 
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -1721,7 +1721,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void qty1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_qty1KeyTyped
         // int maxqty=0;
         char key = evt.getKeyChar();
-        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACKSPACE) || (key == KeyEvent.VK_DELETE))) {
+        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACK_SPACE) || (key == KeyEvent.VK_DELETE))) {
             evt.consume();
         }
 
@@ -1757,7 +1757,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void qty2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_qty2KeyTyped
         char key = evt.getKeyChar();
-        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACKSPACE) || (key == KeyEvent.VK_DELETE))) {
+        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACK_SPACE) || (key == KeyEvent.VK_DELETE))) {
             evt.consume();
         }
         if (!qty2.getText().isEmpty() && !rslab2.getText().isEmpty() && !blab2.getText().isEmpty()) {
@@ -1776,7 +1776,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void qty3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_qty3KeyTyped
         char key = evt.getKeyChar();
-        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACKSPACE) || (key == KeyEvent.VK_DELETE))) {
+        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACK_SPACE) || (key == KeyEvent.VK_DELETE))) {
             evt.consume();
         }
         if (!qty3.getText().isEmpty() && !rslab3.getText().isEmpty() && !blab3.getText().isEmpty()) {
@@ -1795,7 +1795,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void qty4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_qty4KeyTyped
         char key = evt.getKeyChar();
-        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACKSPACE) || (key == KeyEvent.VK_DELETE))) {
+        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACK_SPACE) || (key == KeyEvent.VK_DELETE))) {
             evt.consume();
         }
         if (!qty4.getText().isEmpty() && !rslab4.getText().isEmpty() && !blab4.getText().isEmpty()) {
@@ -1814,7 +1814,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void qty5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_qty5KeyTyped
         char key = evt.getKeyChar();
-        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACKSPACE) || (key == KeyEvent.VK_DELETE))) {
+        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACK_SPACE) || (key == KeyEvent.VK_DELETE))) {
             evt.consume();
         }
         if (!qty5.getText().isEmpty() && !rslab5.getText().isEmpty() && !blab5.getText().isEmpty()) {
@@ -1833,7 +1833,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void itxt1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_itxt1KeyTyped
         char key = evt.getKeyChar();
-        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACKSPACE) || (key == KeyEvent.VK_DELETE))) {
+        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACK_SPACE) || (key == KeyEvent.VK_DELETE))) {
             evt.consume();
         }
         if (itxt1.getText() != null && !itxt1.getText().isEmpty()) {
@@ -1981,7 +1981,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void itxt2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_itxt2KeyTyped
         char key = evt.getKeyChar();
-        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACKSPACE) || (key == KeyEvent.VK_DELETE))) {
+        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACK_SPACE) || (key == KeyEvent.VK_DELETE))) {
             evt.consume();
         }
 
@@ -2042,7 +2042,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void itxt3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_itxt3KeyTyped
         char key = evt.getKeyChar();
-        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACKSPACE) || (key == KeyEvent.VK_DELETE))) {
+        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACK_SPACE) || (key == KeyEvent.VK_DELETE))) {
             evt.consume();
         }
         if (itxt3.getText() != null && !itxt3.getText().isEmpty()) {
@@ -2102,7 +2102,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void itxt4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_itxt4KeyTyped
         char key = evt.getKeyChar();
-        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACKSPACE) || (key == KeyEvent.VK_DELETE))) {
+        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACK_SPACE) || (key == KeyEvent.VK_DELETE))) {
             evt.consume();
         }
 
@@ -2163,7 +2163,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void itxt5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_itxt5KeyTyped
         char key = evt.getKeyChar();
-        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACKSPACE) || (key == KeyEvent.VK_DELETE))) {
+        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACK_SPACE) || (key == KeyEvent.VK_DELETE))) {
             evt.consume();
         }
 
