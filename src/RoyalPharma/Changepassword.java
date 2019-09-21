@@ -35,9 +35,10 @@ public class Changepassword extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel6 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         uid = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -45,23 +46,30 @@ public class Changepassword extends javax.swing.JFrame {
         confirmpass = new javax.swing.JPasswordField();
         set = new javax.swing.JButton();
         back = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        changepassbtn = new javax.swing.JButton();
+        newaccountbtn = new javax.swing.JButton();
+        logoutbtn = new javax.swing.JButton();
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/Medical-Shop-Software (1)_1.jpg"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Change Password");
+        setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 255));
-        jLabel1.setText("Forgot Password");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 230, 26));
-
         uid.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         uid.setText("jLabel3");
         jPanel1.add(uid, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 240, 40));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 204, 153));
+        jLabel1.setText("CHANGE PASSWORD");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 280, 26));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("User ID :");
@@ -103,7 +111,7 @@ public class Changepassword extends javax.swing.JFrame {
                 setActionPerformed(evt);
             }
         });
-        jPanel1.add(set, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, 110, 40));
+        jPanel1.add(set, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 110, 40));
 
         back.setBackground(new java.awt.Color(255, 255, 255));
         back.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -117,12 +125,65 @@ public class Changepassword extends javax.swing.JFrame {
                 backActionPerformed(evt);
             }
         });
-        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 110, 40));
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, 110, 40));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/Medical-Shop-Software (1)_1.jpg"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-830, 10, 1420, 470));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/3.jpg"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 460));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 460));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 600, 460));
+
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/24px-new.png"))); // NOI18N
+        jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 70, 70));
+
+        changepassbtn.setBackground(new java.awt.Color(255, 255, 255));
+        changepassbtn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        changepassbtn.setForeground(new java.awt.Color(0, 204, 153));
+        changepassbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/changepassword.png"))); // NOI18N
+        changepassbtn.setText("  CHANGE PASSWORD");
+        changepassbtn.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        changepassbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        changepassbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changepassbtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(changepassbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 270, 40));
+
+        newaccountbtn.setBackground(new java.awt.Color(255, 255, 255));
+        newaccountbtn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        newaccountbtn.setForeground(new java.awt.Color(0, 204, 153));
+        newaccountbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/newuser.png"))); // NOI18N
+        newaccountbtn.setText("  CREATE NEW ACCOUNT");
+        newaccountbtn.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        newaccountbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        newaccountbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newaccountbtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(newaccountbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 270, 40));
+
+        logoutbtn.setBackground(new java.awt.Color(255, 255, 255));
+        logoutbtn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        logoutbtn.setForeground(new java.awt.Color(0, 204, 153));
+        logoutbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/logout.png"))); // NOI18N
+        logoutbtn.setText("             LOGOUT");
+        logoutbtn.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        logoutbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        logoutbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutbtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(logoutbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 270, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -205,6 +266,31 @@ public class Changepassword extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_backActionPerformed
 
+    private void changepassbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changepassbtnActionPerformed
+        Changepassword CP = new Changepassword();
+        CP.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_changepassbtnActionPerformed
+
+    private void newaccountbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newaccountbtnActionPerformed
+        Createnewuser CNU = new Createnewuser();
+        CNU.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_newaccountbtnActionPerformed
+
+    private void logoutbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutbtnActionPerformed
+        Login lg = new Login();
+        lg.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logoutbtnActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        ViewPreviousBills loginuser = new ViewPreviousBills();
+        MainWindow mw = new MainWindow(loginuser);
+        mw.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -244,13 +330,18 @@ public class Changepassword extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
+    private javax.swing.JButton changepassbtn;
     private javax.swing.JPasswordField confirmpass;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton logoutbtn;
+    private javax.swing.JButton newaccountbtn;
     private javax.swing.JPasswordField newpass;
     private javax.swing.JButton set;
     private javax.swing.JLabel uid;

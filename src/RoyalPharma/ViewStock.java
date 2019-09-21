@@ -38,18 +38,49 @@ public class ViewStock extends javax.swing.JFrame {
         entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("royalkmpharmacy?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
         store_1Query = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT s FROM Store_1 s");
         store_1List = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : store_1Query.getResultList();
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        vstable = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        vstable = new javax.swing.JTable();
+        jButton4 = new javax.swing.JButton();
+        additembutn = new javax.swing.JButton();
+        deleteitembutn = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        viewstock1 = new javax.swing.JButton();
+        viewbills = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/3.jpg"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("View Stock");
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(102, 102, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/back.png"))); // NOI18N
+        jButton2.setText("Back");
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 390, 100, 50));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 204, 153));
+        jLabel2.setText("VIEW STOCK");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 30, 160, 40));
+
+        vstable.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, store_1List, vstable);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${batchNo}"));
@@ -79,35 +110,101 @@ public class ViewStock extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(vstable);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 639, 280));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, 639, 280));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(102, 102, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/back.png"))); // NOI18N
-        jButton2.setText("Back");
-        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/24px-new.png"))); // NOI18N
+        jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 100, 50));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 70, 70));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 102, 255));
-        jLabel2.setText("View stock");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, 160, 40));
+        additembutn.setBackground(new java.awt.Color(255, 255, 255));
+        additembutn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        additembutn.setForeground(new java.awt.Color(0, 204, 153));
+        additembutn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/additems.png"))); // NOI18N
+        additembutn.setText("    UPDATE ITEMS");
+        additembutn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        additembutn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        additembutn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                additembutnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(additembutn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 270, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/Medical-Shop-Software (1)_1.jpg"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-620, -330, 1570, 840));
+        deleteitembutn.setBackground(new java.awt.Color(255, 255, 255));
+        deleteitembutn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        deleteitembutn.setForeground(new java.awt.Color(0, 204, 153));
+        deleteitembutn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/remove.png"))); // NOI18N
+        deleteitembutn.setText("    DELETE ITEMS");
+        deleteitembutn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        deleteitembutn.setBorderPainted(false);
+        deleteitembutn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        deleteitembutn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteitembutnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(deleteitembutn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 270, 40));
+
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 204, 153));
+        jButton3.setText("UPDATE CUSTOMERS");
+        jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 270, 40));
+
+        jButton5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(0, 204, 153));
+        jButton5.setText("UPDATE SUPPLIERS");
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 270, 40));
+
+        viewstock1.setBackground(new java.awt.Color(255, 255, 255));
+        viewstock1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        viewstock1.setForeground(new java.awt.Color(0, 204, 153));
+        viewstock1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/viewimage.png"))); // NOI18N
+        viewstock1.setText("  VIEW STOCK");
+        viewstock1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        viewstock1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        viewstock1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewstock1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(viewstock1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 270, 40));
+
+        viewbills.setBackground(new java.awt.Color(255, 255, 255));
+        viewbills.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        viewbills.setForeground(new java.awt.Color(0, 204, 153));
+        viewbills.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/viewbills.png"))); // NOI18N
+        viewbills.setText("DAILY REPORT");
+        viewbills.setAutoscrolls(true);
+        viewbills.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        viewbills.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        viewbills.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewbillsActionPerformed(evt);
+            }
+        });
+        jPanel1.add(viewbills, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 270, 40));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/3.jpg"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 870, 460));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,6 +228,37 @@ public class ViewStock extends javax.swing.JFrame {
     private void vstableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vstableMouseClicked
 
     }//GEN-LAST:event_vstableMouseClicked
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Additems loginuser = new Additems();
+        MainWindow mw = new MainWindow(loginuser);
+        mw.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void additembutnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_additembutnActionPerformed
+        Additems AI = new Additems();
+        AI.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_additembutnActionPerformed
+
+    private void deleteitembutnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteitembutnActionPerformed
+        Deleteitem DI = new Deleteitem();
+        DI.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_deleteitembutnActionPerformed
+
+    private void viewstock1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewstock1ActionPerformed
+        ViewStock VS = new ViewStock();
+        VS.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_viewstock1ActionPerformed
+
+    private void viewbillsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbillsActionPerformed
+        ViewPreviousBills vb = new ViewPreviousBills();
+        vb.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_viewbillsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,15 +298,23 @@ public class ViewStock extends javax.swing.JFrame {
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton additembutn;
+    private javax.swing.JButton deleteitembutn;
     private javax.persistence.EntityManager entityManager;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.ButtonGroup mybtngroup;
     private java.util.List<RoyalPharma.Store_1> store_1List;
     private javax.persistence.Query store_1Query;
+    private javax.swing.JButton viewbills;
+    private javax.swing.JButton viewstock1;
     private javax.swing.JTable vstable;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables

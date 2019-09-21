@@ -43,6 +43,7 @@ public class ViewPreviousBills extends javax.swing.JFrame {
         previousbillsQuery2 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT p FROM Previousbills p");
         previousbillsList2 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : previousbillsQuery2.getResultList();
         jLabel1 = new javax.swing.JLabel();
+        reportdate = new datechooser.beans.DateChooserCombo();
         jButton2 = new javax.swing.JButton();
         jscrollpane = new javax.swing.JScrollPane();
         bill_table = new javax.swing.JTable();
@@ -50,24 +51,36 @@ public class ViewPreviousBills extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         invoice_table = new javax.swing.JTable();
         search = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        totProfit = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        totIn = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        totOut = new javax.swing.JLabel();
+        reportId = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        additembutn = new javax.swing.JButton();
+        deleteitembutn = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        viewstock = new javax.swing.JButton();
+        viewbills = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Previous Bills");
+        setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 255));
-        jLabel1.setText("Daily Report");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 50, 220, 50));
+        jLabel1.setForeground(new java.awt.Color(0, 204, 153));
+        jLabel1.setText("DAILY REPORT");
+        jLabel1.setAutoscrolls(true);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 50, 220, 50));
+
+        reportdate.setCalendarPreferredSize(new java.awt.Dimension(270, 200));
+        getContentPane().add(reportdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -81,8 +94,9 @@ public class ViewPreviousBills extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 660, 120, 50));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 590, 120, 50));
 
+        jscrollpane.setBackground(new java.awt.Color(255, 255, 255));
         jscrollpane.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         bill_table.setModel(new javax.swing.table.DefaultTableModel(
@@ -106,11 +120,13 @@ public class ViewPreviousBills extends javax.swing.JFrame {
         });
         jscrollpane.setViewportView(bill_table);
 
-        getContentPane().add(jscrollpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 420, 340));
+        getContentPane().add(jscrollpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 420, 220));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Date");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 140, 40));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 70, 40));
+
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
         invoice_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -133,7 +149,7 @@ public class ViewPreviousBills extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(invoice_table);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, -1, 340));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 170, -1, 220));
 
         search.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         search.setText("SEARCH DATE");
@@ -142,39 +158,125 @@ public class ViewPreviousBills extends javax.swing.JFrame {
                 searchActionPerformed(evt);
             }
         });
-        getContentPane().add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 170, 30));
+        getContentPane().add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 120, 170, 30));
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel14.setText("(Total Profit)");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 580, 150, 40));
+        totProfit.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        totProfit.setText("(Total Profit)");
+        getContentPane().add(totProfit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 540, 160, 60));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel10.setText("(Total Income)");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 580, 150, 40));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setText("Total Daily Income:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 450, 190, 30));
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 530, 120, 40));
+        totIn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        totIn.setText("(Total Income)");
+        getContentPane().add(totIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 440, 220, 50));
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 540, 130, 30));
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setText("Total Daily Outcome:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 440, 190, 50));
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel12.setText("(Total Outcome)");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 560, 250, 80));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel8.setText("Total Daily Profit:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 540, 220, 50));
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 530, 160, 50));
+        totOut.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        totOut.setText("(Total Outcome)");
+        getContentPane().add(totOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 450, 200, 40));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel5.setText("jLabel5");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 130, 160, 40));
+        reportId.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        reportId.setText("jLabel5");
+        getContentPane().add(reportId, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 120, 120, 40));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Report ID:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 130, 140, 40));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 120, 140, 40));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/Medical-Shop-Software (1)_1.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-220, -140, 1680, 1000));
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/3.jpg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 1090, 650));
+
+        additembutn.setBackground(new java.awt.Color(255, 255, 255));
+        additembutn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        additembutn.setForeground(new java.awt.Color(0, 204, 153));
+        additembutn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/additems.png"))); // NOI18N
+        additembutn.setText("    UPDATE ITEMS");
+        additembutn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        additembutn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        additembutn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                additembutnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(additembutn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 270, 40));
+
+        deleteitembutn.setBackground(new java.awt.Color(255, 255, 255));
+        deleteitembutn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        deleteitembutn.setForeground(new java.awt.Color(0, 204, 153));
+        deleteitembutn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/remove.png"))); // NOI18N
+        deleteitembutn.setText("    DELETE ITEMS");
+        deleteitembutn.setToolTipText("");
+        deleteitembutn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        deleteitembutn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        deleteitembutn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteitembutnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(deleteitembutn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 270, 40));
+
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 204, 153));
+        jButton3.setText("UPDATE CUSTOMERS");
+        jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 270, 40));
+
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(0, 204, 153));
+        jButton4.setText("UPDATE SUPPLIERS");
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 270, 40));
+
+        viewstock.setBackground(new java.awt.Color(255, 255, 255));
+        viewstock.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        viewstock.setForeground(new java.awt.Color(0, 204, 153));
+        viewstock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/viewimage.png"))); // NOI18N
+        viewstock.setText("  VIEW STOCK");
+        viewstock.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        viewstock.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        viewstock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewstockActionPerformed(evt);
+            }
+        });
+        getContentPane().add(viewstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 270, 40));
+
+        viewbills.setBackground(new java.awt.Color(255, 255, 255));
+        viewbills.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        viewbills.setForeground(new java.awt.Color(0, 204, 153));
+        viewbills.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/viewbills.png"))); // NOI18N
+        viewbills.setText("DAILY REPORT");
+        viewbills.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        viewbills.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        viewbills.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewbillsActionPerformed(evt);
+            }
+        });
+        getContentPane().add(viewbills, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 270, 40));
+
+        jButton5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/24px-new.png"))); // NOI18N
+        jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 70, 70));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -187,40 +289,73 @@ public class ViewPreviousBills extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
-//        SimpleDateFormat dailyReportDate = new SimpleDateFormat();
-//        Date date = reportdate.();
-//        System.out.println(date + " ****************** ");
-//
-//        String sql1 = "SELECT bill_id,tot_amount FROM bill_details WHERE bill_date=? ";
-//        String sql2 = "SELECT invoice_id,total_invoice FROM invoice_details WHERE invoice_date=? ";
-//        try {
-//            PreparedStatement stmt = DbConnect.getConnection().prepareStatement(sql1);
-//            System.out.println("sql1-----------------");
-//            stmt.setDate(1, (java.sql.Date) date);
-//            System.out.println(date + ".......DATE.............");
-//            ResultSet rs = stmt.executeQuery();
-//
-//            bill_table.setModel(DbUtils.resultSetToTableModel(rs));
-//        } catch (SQLException ex) {
-//            ex.printStackTrace();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        
-//          try {
-//            PreparedStatement stmt = DbConnect.getConnection().prepareStatement(sql2);
-//            System.out.println("sql2-----------------");
-//            stmt.setDate(1, (java.sql.Date) date);
-//            System.out.println(date + ".......DATE invoice.............");
-//            ResultSet rs = stmt.executeQuery();
-//
-//           invoice_table.setModel(DbUtils.resultSetToTableModel(rs));
-//        } catch (SQLException ex) {
-//            ex.printStackTrace();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        SimpleDateFormat dailyReportDate = new SimpleDateFormat("YYYY-MM-DD");
+        String date = dailyReportDate.format(reportdate.getDateFormat());
+        System.out.println(date + " ****************** ");
+
+        String sql1 = "SELECT bill_id,tot_amount FROM bill_details WHERE bill_date=? ";
+        String sql2 = "SELECT invoice_id,total_invoice FROM invoice_details WHERE invoice_date=? ";
+        try {
+            PreparedStatement stmt = DbConnect.getConnection().prepareStatement(sql1);
+            System.out.println("sql1-----------------");
+            stmt.setString(1, date);
+            System.out.println(date + ".......DATE.............");
+            ResultSet rs = stmt.executeQuery();
+
+            bill_table.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            PreparedStatement stmt = DbConnect.getConnection().prepareStatement(sql2);
+            System.out.println("sql2-----------------");
+            stmt.setString(1, date);
+            System.out.println(date + ".......DATE invoice.............");
+            ResultSet rs = stmt.executeQuery();
+
+            invoice_table.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_searchActionPerformed
+
+
+
+    private void additembutnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_additembutnActionPerformed
+        Additems AI = new Additems();
+        AI.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_additembutnActionPerformed
+
+    private void deleteitembutnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteitembutnActionPerformed
+        Deleteitem DI = new Deleteitem();
+        DI.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_deleteitembutnActionPerformed
+
+    private void viewstockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewstockActionPerformed
+        ViewStock VS = new ViewStock();
+        VS.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_viewstockActionPerformed
+
+    private void viewbillsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbillsActionPerformed
+        ViewPreviousBills vb = new ViewPreviousBills();
+        vb.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_viewbillsActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        ViewPreviousBills loginuser = new ViewPreviousBills();
+        MainWindow mw = new MainWindow(loginuser);
+        mw.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,21 +395,22 @@ public class ViewPreviousBills extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton additembutn;
     private javax.swing.JTable bill_table;
+    private javax.swing.JButton deleteitembutn;
     private javax.persistence.EntityManager entityManager;
     private javax.swing.JTable invoice_table;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jscrollpane;
     private java.util.List<RoyalPharma.Previousbills> previousbillsList;
@@ -283,6 +419,13 @@ public class ViewPreviousBills extends javax.swing.JFrame {
     private javax.persistence.Query previousbillsQuery;
     private javax.persistence.Query previousbillsQuery1;
     private javax.persistence.Query previousbillsQuery2;
+    private javax.swing.JLabel reportId;
+    private datechooser.beans.DateChooserCombo reportdate;
     private javax.swing.JButton search;
+    private javax.swing.JLabel totIn;
+    private javax.swing.JLabel totOut;
+    private javax.swing.JLabel totProfit;
+    private javax.swing.JButton viewbills;
+    private javax.swing.JButton viewstock;
     // End of variables declaration//GEN-END:variables
 }

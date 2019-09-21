@@ -5,8 +5,10 @@
  */
 package RoyalPharma;
 
-
+import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyListener;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -46,62 +48,94 @@ public class Additems extends javax.swing.JFrame {
         qty = new javax.swing.JTextField();
         mrp = new javax.swing.JTextField();
         back = new javax.swing.JButton();
-        add = new javax.swing.JButton();
         expdate = new javax.swing.JTextField();
+        add = new javax.swing.JButton();
+        additembutn = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        viewbills = new javax.swing.JButton();
+        iName = new javax.swing.JTextField();
+        deleteitembutn = new javax.swing.JButton();
+        discount = new javax.swing.JTextField();
+        viewstock = new javax.swing.JButton();
+        remove1 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        updateBtn = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Add Drug Items");
+        setTitle("Update Items");
+        setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 255));
-        jLabel1.setText("Add Drug Items");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 24, 220, -1));
+        jLabel1.setForeground(new java.awt.Color(0, 204, 153));
+        jLabel1.setText("UPDATE ITEMS");
+        jLabel1.setAutoscrolls(true);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 30, 220, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("Batch No");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 73, 87, -1));
+        jLabel2.setText("Item ID");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 87, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Genaric Name");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 73, -1, -1));
+        jLabel3.setText("Generic Name");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Brand Name");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 73, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 100, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setText("Expire Date");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(551, 73, -1, -1));
+        jLabel5.setText("Expiry Date");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 100, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Qty");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(692, 73, 44, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 100, 44, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setText("MRP");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(754, 73, 37, -1));
-        jPanel1.add(bno, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 101, 87, -1));
-        jPanel1.add(gname, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 101, 182, -1));
-        jPanel1.add(bname, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 101, 186, -1));
+        jLabel7.setText("Price");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 100, 37, -1));
 
+        bno.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                bnoKeyTyped(evt);
+            }
+        });
+        jPanel1.add(bno, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 87, 30));
+
+        gname.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPanel1.add(gname, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 130, 182, 30));
+        jPanel1.add(bname, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 130, 186, 30));
+
+        qty.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         qty.setText("0");
         qty.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 qtyActionPerformed(evt);
             }
         });
-        jPanel1.add(qty, new org.netbeans.lib.awtextra.AbsoluteConstraints(684, 101, 45, -1));
+        jPanel1.add(qty, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 130, 45, 30));
 
+        mrp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         mrp.setText("0.00");
-        jPanel1.add(mrp, new org.netbeans.lib.awtextra.AbsoluteConstraints(747, 101, 67, -1));
+        mrp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mrpActionPerformed(evt);
+            }
+        });
+        jPanel1.add(mrp, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 130, 67, 30));
 
         back.setBackground(new java.awt.Color(255, 255, 255));
         back.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        back.setForeground(new java.awt.Color(102, 102, 255));
+        back.setForeground(new java.awt.Color(0, 204, 153));
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/back.png"))); // NOI18N
         back.setText("Back");
         back.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -111,11 +145,20 @@ public class Additems extends javax.swing.JFrame {
                 backActionPerformed(evt);
             }
         });
-        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 100, 50));
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 470, 100, 50));
+
+        expdate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        expdate.setText("YYYY-MM-DD");
+        expdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                expdateActionPerformed(evt);
+            }
+        });
+        jPanel1.add(expdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 130, 115, 30));
 
         add.setBackground(new java.awt.Color(255, 255, 255));
         add.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        add.setForeground(new java.awt.Color(102, 102, 255));
+        add.setForeground(new java.awt.Color(0, 204, 153));
         add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/add.png"))); // NOI18N
         add.setText("Add");
         add.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -125,89 +168,217 @@ public class Additems extends javax.swing.JFrame {
                 addActionPerformed(evt);
             }
         });
-        jPanel1.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 330, 100, 50));
+        jPanel1.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 470, 100, 50));
 
-        expdate.setText("YYYY-MM-DD");
-        expdate.addActionListener(new java.awt.event.ActionListener() {
+        additembutn.setBackground(new java.awt.Color(255, 255, 255));
+        additembutn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        additembutn.setForeground(new java.awt.Color(0, 204, 153));
+        additembutn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/additems.png"))); // NOI18N
+        additembutn.setText("    UPDATE ITEMS");
+        additembutn.setToolTipText("");
+        additembutn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        additembutn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        additembutn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                expdateActionPerformed(evt);
+                additembutnActionPerformed(evt);
             }
         });
-        jPanel1.add(expdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(551, 101, 115, -1));
+        jPanel1.add(additembutn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 270, 40));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/Medical-Shop-Software (1)_1.jpg"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-690, -150, 1600, 580));
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 204, 153));
+        jButton3.setText("UPDATE SUPPLIERS");
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 270, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 204, 153));
+        jButton2.setText("UPDATE CUSTOMERS");
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 270, 40));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setText("Discount");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 100, -1, -1));
+
+        viewbills.setBackground(new java.awt.Color(255, 255, 255));
+        viewbills.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        viewbills.setForeground(new java.awt.Color(0, 204, 153));
+        viewbills.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/viewbills.png"))); // NOI18N
+        viewbills.setText("DAILY REPORT");
+        viewbills.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        viewbills.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        viewbills.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewbillsActionPerformed(evt);
+            }
+        });
+        jPanel1.add(viewbills, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 270, 40));
+
+        iName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPanel1.add(iName, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 150, 30));
+
+        deleteitembutn.setBackground(new java.awt.Color(255, 255, 255));
+        deleteitembutn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        deleteitembutn.setForeground(new java.awt.Color(0, 204, 153));
+        deleteitembutn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/remove.png"))); // NOI18N
+        deleteitembutn.setText("    DELETE ITEMS");
+        deleteitembutn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        deleteitembutn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        deleteitembutn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteitembutnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(deleteitembutn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 270, 40));
+
+        discount.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        discount.setText("0.00");
+        jPanel1.add(discount, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 130, 70, 30));
+
+        viewstock.setBackground(new java.awt.Color(255, 255, 255));
+        viewstock.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        viewstock.setForeground(new java.awt.Color(0, 204, 153));
+        viewstock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/viewimage.png"))); // NOI18N
+        viewstock.setText("  VIEW STOCK");
+        viewstock.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        viewstock.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        viewstock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewstockActionPerformed(evt);
+            }
+        });
+        jPanel1.add(viewstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 270, 40));
+
+        remove1.setBackground(new java.awt.Color(255, 255, 255));
+        remove1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        remove1.setForeground(new java.awt.Color(102, 102, 255));
+        remove1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/deleteitems.png"))); // NOI18N
+        remove1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        remove1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        remove1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                remove1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(remove1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1390, 130, 40, 30));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setText("Item Name");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, -1, -1));
+
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/24px-new.png"))); // NOI18N
+        jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 70, 70));
+
+        updateBtn.setBackground(new java.awt.Color(255, 255, 255));
+        updateBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        updateBtn.setForeground(new java.awt.Color(0, 204, 153));
+        updateBtn.setText("Update");
+        updateBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        updateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 470, 100, 50));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/3.jpg"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 1180, 540));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1460, 588));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-    
+
         Add_Drug_Item addnew = new Add_Drug_Item();
         addnew.setBNo(bno.getText());
         String batch = addnew.getBNo();
+        addnew.setiName(iName.getText());
+        String item = addnew.getiName();
         addnew.setGName(gname.getText());
-        String genaric = addnew.getGName();
+        String generic = addnew.getGName();
         addnew.setBName(bname.getText());
         String brand = addnew.getBName();
         addnew.setExp(expdate.getText());
         String exp = addnew.getExp();
+        addnew.setDisc(Double.parseDouble(discount.getText()));
+        String disc = String.valueOf(addnew.getDisc());
         addnew.setQty(Integer.parseInt(qty.getText()));
         String qty2 = String.valueOf(addnew.getQty());
         System.out.println(qty2);
         addnew.setMrp(Double.parseDouble(mrp.getText()));
         String mrp2 = String.valueOf(addnew.getMrp());
         System.out.println(mrp2);
-        if ("".equals(batch) || "".equals(genaric) || "".equals(brand) || "".equals(exp) || "".equals(qty2) || "".equals(mrp2)){ 
+        if ("".equals(batch) || "".equals(item) || "".equals(generic) || "".equals(brand) || "".equals(exp) || "".equals(disc) || "".equals(qty2) || "".equals(mrp2)) {
             JOptionPane.showMessageDialog(null, "Please compleat all fields of the form.");
-        }else{
-            String sql="INSERT INTO store(BatchNo,GName,BName,Qty,MRP,Exp) VAlUES (?,?,?,?,?,?)";
-           try {
-               PreparedStatement stmt =DbConnect.getConnection().prepareStatement(sql);
-               stmt.setString(1, batch);
-               stmt.setString(2, genaric);
-               stmt.setString(3, brand);
-               stmt.setString(4, qty2);
-               stmt.setString(5, mrp2);
-               stmt.setString(6, exp);
-               stmt.executeUpdate();
-              
-           } catch (SQLException ex) {
-              ex.printStackTrace();
-           }catch(Exception e){
-               e.printStackTrace();
-               }
-            JOptionPane.showMessageDialog(null,"You are added new drug items successfully.");
+        } else {
+            String sql1 = "INSERT INTO `item_details` (`item_id`,`item_name`) VALUES (?,?)";
+            String sql2 = "INSERT INTO `medicine_y` (`item_id_fk`, `item_name`,`generic_name`) VALUES  (?,?,?)";
+            String sql3 = "INSERT INTO medicine_x (item_id_fk, brand_name) VALUES (?,?)";
+            String sql4 = "INSERT INTO item_primary_details (`item_name`,`exp_date`,`price`,`discount`,`available_qty`) VALUES (?,?,?,?,?)";
+
+            try {
+                PreparedStatement stmt1 = DbConnect.getConnection().prepareStatement(sql1);
+                stmt1.setInt(1, Integer.parseInt(batch));
+                stmt1.setString(2, item);
+                stmt1.executeUpdate();
+
+                PreparedStatement stmt2 = DbConnect.getConnection().prepareStatement(sql2);
+                stmt2.setInt(1, Integer.parseInt(batch));
+                stmt2.setString(2, item);
+                stmt2.setString(3, generic);
+                stmt2.executeUpdate();
+
+                PreparedStatement stmt3 = DbConnect.getConnection().prepareStatement(sql3);
+                stmt3.setInt(1, Integer.parseInt(batch));
+                stmt3.setString(2, brand);
+                stmt3.executeUpdate();
+
+                PreparedStatement stmt4 = DbConnect.getConnection().prepareStatement(sql4);
+                stmt4.setString(1, item);
+                stmt4.setDate(2, java.sql.Date.valueOf(exp));
+                stmt4.setDouble(3, Double.parseDouble(mrp2));
+                stmt4.setDouble(4, Double.parseDouble(disc));
+                stmt4.setInt(5, Integer.parseInt(qty2));
+                stmt4.executeUpdate();
+
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            JOptionPane.showMessageDialog(null, "You are added new drug items successfully.");
             /* Login drugadded =new Login();
-               drugadded.setVisible(true);
-               this.dispose();*/
+             drugadded.setVisible(true);
+             this.dispose();*/
             bno.setText("");
+            iName.setText("");
             gname.setText("");
             bname.setText("");
             expdate.setText("YYYY-MM-DD");
+            discount.setText("0.00");
             qty.setText("0");
             mrp.setText("0.00");
-      }
+        }
     }//GEN-LAST:event_addActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         Additems loginuser = new Additems();
-        MainWindow mw=new  MainWindow(loginuser);
-            mw.setVisible(true);
-            this.dispose();
+        MainWindow mw = new MainWindow(loginuser);
+        mw.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_backActionPerformed
 
     private void qtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qtyActionPerformed
@@ -217,9 +388,170 @@ public class Additems extends javax.swing.JFrame {
     private void expdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_expdateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_expdateActionPerformed
-    
-       
-    
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Additems loginuser = new Additems();
+        MainWindow mw = new MainWindow(loginuser);
+        mw.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void additembutnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_additembutnActionPerformed
+        Additems AI = new Additems();
+        AI.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_additembutnActionPerformed
+
+    private void deleteitembutnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteitembutnActionPerformed
+        Deleteitem DI = new Deleteitem();
+        DI.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_deleteitembutnActionPerformed
+
+    private void viewstockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewstockActionPerformed
+        ViewStock VS = new ViewStock();
+        VS.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_viewstockActionPerformed
+
+    private void viewbillsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbillsActionPerformed
+        ViewPreviousBills vb = new ViewPreviousBills();
+        vb.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_viewbillsActionPerformed
+
+    private void bnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bnoKeyTyped
+        char key = evt.getKeyChar();
+        if (!(Character.isDigit(key) || (key == KeyEvent.VK_BACKSPACE) || (key == KeyEvent.VK_DELETE))) {
+            evt.consume();
+        }
+
+        if (bno.getText() != null && !bno.getText().isEmpty()) {
+            String sql1 = "SELECT  exp_date, price, discount,available_qty from item_primary_details i left join item_details o on i.item_name = o.item_name where item_id =?";
+            String sql2 = "SELECT  `item_name`,`generic_name` FROM `medicine_y` WHERE `item_id_fk`=?";
+            String sql3 = "SELECT `brand_name` FROM `medicine_x` WHERE `item_id_fk`=?";
+
+            try {
+                //sql1
+                PreparedStatement stmt1 = DbConnect.getConnection().prepareStatement(sql1);
+                stmt1.setInt(1, Integer.parseInt(bno.getText()));
+                ResultSet rs1 = stmt1.executeQuery();
+
+                while (rs1.next()) {
+                    String exdate = rs1.getDate("exp_date").toString();
+                    String price = Float.toString(rs1.getFloat("price"));
+                    String dist = Float.toString(rs1.getFloat("discount"));
+                    String quantity = Integer.toString(rs1.getInt("available_qty"));
+
+                    expdate.setText(exdate);
+                    mrp.setText(price);
+                    discount.setText(dist);
+                    qty.setText(quantity);
+
+                }
+
+                //sql2
+                PreparedStatement stmt2 = DbConnect.getConnection().prepareStatement(sql2);
+                stmt2.setInt(1, Integer.parseInt(bno.getText()));
+                ResultSet rs2 = stmt2.executeQuery();
+
+                while (rs2.next()) {
+                    String itemName = rs2.getString("item_name");
+                    String genericName = rs2.getString("generic_name");
+
+                    iName.setText(itemName);
+                    gname.setText(genericName);
+                }
+
+                //sql3
+                PreparedStatement stmt3 = DbConnect.getConnection().prepareStatement(sql3);
+                stmt3.setInt(1, Integer.parseInt(bno.getText()));
+                ResultSet rs3 = stmt3.executeQuery();
+
+                while (rs3.next()) {
+                    String brandName = rs3.getString("brand_name");
+                    bname.setText(brandName);
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+    }//GEN-LAST:event_bnoKeyTyped
+
+    private void remove1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove1ActionPerformed
+
+        bno.setText("");
+        iName.setText("");
+        gname.setText("");
+        bname.setText("");
+        expdate.setText("YYYY/MM/DD");
+        discount.setText("0.00");
+        qty.setText("0");
+        mrp.setText("0.00");
+
+    }//GEN-LAST:event_remove1ActionPerformed
+
+    private void mrpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mrpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mrpActionPerformed
+
+    private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
+        if ("".equals(bno.getText()) || "".equals(iName.getText()) || "".equals(gname.getText()) || "".equals(bname.getText()) || "".equals(expdate.getText()) || "".equals(discount.getText()) || "".equals(qty.getText()) || "".equals(mrp.getText())) {
+            JOptionPane.showMessageDialog(null, "Please compleat all fields of the form.");
+        } else {
+            String sql1 = "UPDATE `item_details` SET `item_name` = ? WHERE item_id = ? ";
+            String sql2 = "UPDATE  `medicine_y` SET `item_name` = ? ,`generic_name` = ? WHERE `item_id_fk` = ?";
+            String sql3 = "UPDATE  medicine_x SET brand_name = ?  WHERE item_id_fk = ?";
+           //assume that item_name doesn't change by the user for given item_id
+            String sql4 = "UPDATE  item_primary_details SET  `exp_date` = ? ,`price` = ? ,`discount` = ? ,`available_qty` = ? WHERE `item_name` = ? ";
+
+            try {
+                PreparedStatement stmt1 = DbConnect.getConnection().prepareStatement(sql1);
+                stmt1.setString(1, iName.getText());
+                stmt1.setInt(2, Integer.parseInt(bno.getText()));
+                stmt1.executeUpdate();
+
+                PreparedStatement stmt2 = DbConnect.getConnection().prepareStatement(sql2);
+                stmt2.setString(1, iName.getText());
+                stmt2.setString(2, gname.getText());
+                stmt2.setInt(3, Integer.parseInt(bno.getText()));
+                stmt2.executeUpdate();
+
+                PreparedStatement stmt3 = DbConnect.getConnection().prepareStatement(sql3);
+                stmt3.setString(1, bname.getText());
+                stmt3.setInt(2, Integer.parseInt(bno.getText()));
+                stmt3.executeUpdate();
+
+                PreparedStatement stmt4 = DbConnect.getConnection().prepareStatement(sql4);
+                stmt4.setDate(1, java.sql.Date.valueOf(expdate.getText()));
+                stmt4.setDouble(2, Double.parseDouble(mrp.getText()));
+                stmt4.setDouble(3, Double.parseDouble(discount.getText()));
+                stmt4.setInt(4, Integer.parseInt(qty.getText()));
+                stmt4.setString(5, iName.getText());
+                stmt4.executeUpdate();
+
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            JOptionPane.showMessageDialog(null, "You are added new drug items successfully.");
+            /* Login drugadded =new Login();
+             drugadded.setVisible(true);
+             this.dispose();*/
+            bno.setText("");
+            iName.setText("");
+            gname.setText("");
+            bname.setText("");
+            expdate.setText("YYYY-MM-DD");
+            discount.setText("0.00");
+            qty.setText("0");
+            mrp.setText("0.00");
+        }
+    }//GEN-LAST:event_updateBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,12 +592,20 @@ public class Additems extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton add;
+    private javax.swing.JButton additembutn;
     private javax.swing.JButton back;
     private javax.swing.JTextField bname;
     private javax.swing.JTextField bno;
+    private javax.swing.JButton deleteitembutn;
+    private javax.swing.JTextField discount;
     private javax.swing.JTextField expdate;
     private javax.swing.JTextField gname;
+    private javax.swing.JTextField iName;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -273,8 +613,14 @@ public class Additems extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField mrp;
     private javax.swing.JTextField qty;
+    private javax.swing.JButton remove1;
+    private javax.swing.JButton updateBtn;
+    private javax.swing.JButton viewbills;
+    private javax.swing.JButton viewstock;
     // End of variables declaration//GEN-END:variables
+
 }

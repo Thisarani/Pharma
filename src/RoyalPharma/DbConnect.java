@@ -13,22 +13,21 @@ import java.sql.DriverManager;
  * @author user
  */
 public class DbConnect {
-     public static Connection getConnection(){
-        try{
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection conn=
-                DriverManager.getConnection("jdbc:mysql://localhost:3306/pharmacy","root","");
+
+    public static Connection getConnection() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn
+                    = DriverManager.getConnection("jdbc:mysql://localhost:3306/pharmacy", "root", "");
             System.out.println("DB CONNECT***************************");
-        return conn;
-        }
-        catch(ClassNotFoundException ce){
+            return conn;
+        } catch (ClassNotFoundException ce) {
             ce.printStackTrace();
             return null;
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
-    
-     }
+
+    }
 }

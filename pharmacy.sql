@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 08, 2019 at 03:32 AM
+-- Generation Time: Sep 21, 2019 at 03:43 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -240,7 +240,9 @@ INSERT INTO `item_details` (`item_id`, `item_name`) VALUES
 (2, 'Niko'),
 (3, 'Sdfr'),
 (4, 'Libaro'),
-(5, 'Casinol');
+(5, 'Casinol'),
+(6, 'ttttt'),
+(7, 'OOOOOO');
 
 -- --------------------------------------------------------
 
@@ -307,9 +309,10 @@ CREATE TABLE `item_primary_details` (
 --
 
 INSERT INTO `item_primary_details` (`item_name`, `exp_date`, `price`, `discount`, `available_qty`) VALUES
-('Casinol', '2021-03-11', 5, 0, 1000),
-('Libaro', '2021-03-11', 125, 15.25, 2000),
-('Niko', '2019-10-17', 20, 2.5, 100),
+('Casinol', '2021-03-12', 10, 0, 1000),
+('Libaro', '2025-08-09', 521, 12, 150),
+('Niko', '2020-12-12', 10, 0, 80),
+('OOOOOO', '2021-05-15', 25, 0, 100),
 ('Panadol', '2019-07-24', 2.5, 0.5, 100),
 ('Sdfr', '2019-07-24', 50, 1.25, 1000);
 
@@ -430,7 +433,9 @@ INSERT INTO `medicine_x` (`item_id_fk`, `brand_name`) VALUES
 (2, 'Nikola'),
 (3, 'San'),
 (4, 'Libarol'),
-(5, 'Casine');
+(5, 'Casine'),
+(6, 'TPTPTPTP'),
+(7, 'OOOOPS');
 
 -- --------------------------------------------------------
 
@@ -464,7 +469,9 @@ INSERT INTO `medicine_y` (`item_id_fk`, `item_name`, `generic_name`) VALUES
 (2, 'Niko', 'GNiko'),
 (3, 'Sdfr', 'Gsdfr'),
 (4, 'Libaro', 'Glibaro'),
-(5, 'Casinol', 'Gcasinol');
+(5, 'Casinol', 'Gcasinol'),
+(6, 'ttttt', 'PPPP'),
+(7, 'OOOOOO', 'OOOOOO');
 
 -- --------------------------------------------------------
 
@@ -925,7 +932,7 @@ ALTER TABLE `item`
 -- AUTO_INCREMENT for table `item_details`
 --
 ALTER TABLE `item_details`
-  MODIFY `item_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `item_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `item_details2`

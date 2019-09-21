@@ -11,9 +11,11 @@ package RoyalPharma;
  */
 public class Add_Drug_Item implements Add_Drug_ItemInterface {
     private String bno;
+    private String iName;
     private String gname;
     private String bname;
     private String exp;
+    private double disc;
     private int qty;
     private double mrp;
 
@@ -76,6 +78,24 @@ public class Add_Drug_Item implements Add_Drug_ItemInterface {
     public void setMrp(double mrp) {
         this.mrp = mrp;
     }
+
+    public String getiName() {
+        return iName;
+    }
+
+    public void setiName(String iName) {
+        this.iName = iName;
+    }
+
+    public double getDisc() {
+        return disc;
+    }
+
+    public void setDisc(double disc) {
+        this.disc = disc;
+    }
+    
+    
     
     
 }

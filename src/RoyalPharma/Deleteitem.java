@@ -40,19 +40,30 @@ public class Deleteitem extends javax.swing.JFrame {
         dltall = new javax.swing.JButton();
         dltbil = new javax.swing.JButton();
         back = new javax.swing.JButton();
-        dlt = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        viewstock = new javax.swing.JButton();
+        dlt = new javax.swing.JButton();
+        viewbills = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        deleteitembutn = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        additembutn = new javax.swing.JButton();
+        viewstock1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Delete Drug Item");
+        setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 255));
-        jLabel1.setText("Delete Drug Item");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 18, 230, 40));
+        jLabel1.setForeground(new java.awt.Color(0, 204, 153));
+        jLabel1.setText("DELETE ITEMS");
+        jLabel1.setToolTipText("");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 18, 280, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Batch No");
@@ -71,7 +82,7 @@ public class Deleteitem extends javax.swing.JFrame {
 
         dltall.setBackground(new java.awt.Color(255, 255, 255));
         dltall.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        dltall.setForeground(new java.awt.Color(255, 0, 0));
+        dltall.setForeground(new java.awt.Color(0, 204, 153));
         dltall.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/remove.png"))); // NOI18N
         dltall.setText("Delete");
         dltall.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -85,7 +96,7 @@ public class Deleteitem extends javax.swing.JFrame {
 
         dltbil.setBackground(new java.awt.Color(255, 255, 255));
         dltbil.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        dltbil.setForeground(new java.awt.Color(255, 0, 0));
+        dltbil.setForeground(new java.awt.Color(0, 204, 153));
         dltbil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/remove.png"))); // NOI18N
         dltbil.setText("Delete");
         dltbil.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -99,7 +110,7 @@ public class Deleteitem extends javax.swing.JFrame {
 
         back.setBackground(new java.awt.Color(255, 255, 255));
         back.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        back.setForeground(new java.awt.Color(102, 102, 255));
+        back.setForeground(new java.awt.Color(0, 204, 153));
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/back.png"))); // NOI18N
         back.setText("Back");
         back.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -109,7 +120,25 @@ public class Deleteitem extends javax.swing.JFrame {
                 backActionPerformed(evt);
             }
         });
-        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 100, 50));
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 340, 100, 50));
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/3.jpg"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 960, 560));
+
+        viewstock.setBackground(new java.awt.Color(255, 255, 255));
+        viewstock.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        viewstock.setForeground(new java.awt.Color(102, 102, 255));
+        viewstock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/viewimage.png"))); // NOI18N
+        viewstock.setText("  VIEW STOCK");
+        viewstock.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        viewstock.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        viewstock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewstockActionPerformed(evt);
+            }
+        });
+        jPanel1.add(viewstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 270, 40));
 
         dlt.setBackground(new java.awt.Color(255, 255, 255));
         dlt.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -125,25 +154,90 @@ public class Deleteitem extends javax.swing.JFrame {
         });
         jPanel1.add(dlt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 210, 50));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/Medical-Shop-Software (1).jpg"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-350, -90, 960, 560));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, -10, -1, 412));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
-        );
+        viewbills.setBackground(new java.awt.Color(255, 255, 255));
+        viewbills.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        viewbills.setForeground(new java.awt.Color(0, 204, 153));
+        viewbills.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/viewbills.png"))); // NOI18N
+        viewbills.setText("DAILY REPORT");
+        viewbills.setAutoscrolls(true);
+        viewbills.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        viewbills.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        viewbills.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewbillsActionPerformed(evt);
+            }
+        });
+        getContentPane().add(viewbills, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 270, 40));
+
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 204, 153));
+        jButton3.setText("UPDATE SUPPLIERS");
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 270, 40));
+
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 204, 153));
+        jButton2.setText("UPDATE CUSTOMERS");
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 270, 40));
+
+        deleteitembutn.setBackground(new java.awt.Color(255, 255, 255));
+        deleteitembutn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        deleteitembutn.setForeground(new java.awt.Color(0, 204, 153));
+        deleteitembutn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/remove.png"))); // NOI18N
+        deleteitembutn.setText("    DELETE ITEMS");
+        deleteitembutn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        deleteitembutn.setBorderPainted(false);
+        deleteitembutn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        deleteitembutn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteitembutnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(deleteitembutn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 270, 40));
+
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/24px-new.png"))); // NOI18N
+        jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 70, 70));
+
+        additembutn.setBackground(new java.awt.Color(255, 255, 255));
+        additembutn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        additembutn.setForeground(new java.awt.Color(0, 204, 153));
+        additembutn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/additems.png"))); // NOI18N
+        additembutn.setText("    UPDATE ITEMS");
+        additembutn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        additembutn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        additembutn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                additembutnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(additembutn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 270, 40));
+
+        viewstock1.setBackground(new java.awt.Color(255, 255, 255));
+        viewstock1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        viewstock1.setForeground(new java.awt.Color(0, 204, 153));
+        viewstock1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RoyalPharma/viewimage.png"))); // NOI18N
+        viewstock1.setText("  VIEW STOCK");
+        viewstock1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        viewstock1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        viewstock1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewstock1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(viewstock1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 270, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -301,6 +395,43 @@ public class Deleteitem extends javax.swing.JFrame {
         this.dispose();*/
     }//GEN-LAST:event_dltallActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Additems loginuser = new Additems();
+        MainWindow mw = new MainWindow(loginuser);
+        mw.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void additembutnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_additembutnActionPerformed
+        Additems AI = new Additems();
+        AI.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_additembutnActionPerformed
+
+    private void deleteitembutnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteitembutnActionPerformed
+        Deleteitem DI = new Deleteitem();
+        DI.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_deleteitembutnActionPerformed
+
+    private void viewstockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewstockActionPerformed
+        ViewStock VS = new ViewStock();
+        VS.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_viewstockActionPerformed
+
+    private void viewbillsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbillsActionPerformed
+        ViewPreviousBills vb = new ViewPreviousBills();
+        vb.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_viewbillsActionPerformed
+
+    private void viewstock1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewstock1ActionPerformed
+        ViewStock VS = new ViewStock();
+        VS.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_viewstock1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -339,16 +470,24 @@ public class Deleteitem extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton additembutn;
     private javax.swing.JButton back;
     private javax.swing.JTextField bno;
+    private javax.swing.JButton deleteitembutn;
     private javax.swing.JButton dlt;
     private javax.swing.JButton dltall;
     private javax.swing.JButton dltbil;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton viewbills;
+    private javax.swing.JButton viewstock;
+    private javax.swing.JButton viewstock1;
     // End of variables declaration//GEN-END:variables
 }
